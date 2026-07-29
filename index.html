@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#C2185B">
-<meta name="description" content="Ali's Newsletter — Edición #032 · martes 28 de julio, 2026">
-<title>Ali's Newsletter — Edición #032</title>
+<meta name="description" content="Ali's Newsletter — Edición #033 · martes 28 de julio, 2026">
+<title>Ali's Newsletter — Edición #033</title>
 <link rel="manifest" href="/alinewsletter/manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -431,6 +431,133 @@
   .panel.active > *:nth-child(6) { animation-delay: 0.25s; }
   .panel.active > *:nth-child(7) { animation-delay: 0.3s; }
 
+  /* ── DESKTOP SIDEBAR (hidden on mobile) ── */
+  .desktop-sidebar { display: none; }
+
+  /* ══════════════════════════════════════════
+     DESKTOP LAYOUT  ≥ 860px
+  ══════════════════════════════════════════ */
+  @media (min-width: 860px) {
+
+    body {
+      background: #ECEAF2;
+      padding: 0;
+      align-items: stretch;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    /* Phone shell → full-page grid */
+    .phone {
+      max-width: 100%;
+      min-height: 100vh;
+      border-radius: 0;
+      box-shadow: none;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      grid-template-rows: 1fr;
+      grid-template-areas: "sidebar main";
+      background: #ECEAF2;
+    }
+
+    /* Hide mobile-only elements */
+    .notch        { display: none; }
+    .bottom-nav   { display: none; }
+    .topbar       { display: none; }
+
+    /* ── Sidebar ── */
+    .desktop-sidebar {
+      display: flex;
+      flex-direction: column;
+      grid-area: sidebar;
+      background: var(--ink);
+      padding: 36px 20px 32px;
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .ds-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700; font-style: italic;
+      color: #F8BBD9; letter-spacing: -0.2px;
+      margin-bottom: 4px;
+    }
+    .ds-brand-dot { color: var(--rose-mid); }
+    .ds-edition {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.55rem; letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 40px; text-transform: uppercase;
+    }
+    .ds-nav { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+    .ds-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 14px; border-radius: 12px;
+      cursor: pointer; transition: all 0.18s ease;
+      color: rgba(255,255,255,0.5);
+      font-size: 0.83rem; font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      user-select: none;
+    }
+    .ds-item:hover { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.85); }
+    .ds-item.active {
+      background: linear-gradient(135deg, rgba(194,24,91,0.25), rgba(233,30,140,0.15));
+      color: #F8BBD9; font-weight: 600;
+      border: 1px solid rgba(194,24,91,0.3);
+    }
+    .ds-icon { font-size: 1rem; width: 22px; text-align: center; flex-shrink: 0; }
+    .ds-footer {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.52rem; letter-spacing: 0.14em;
+      color: rgba(255,255,255,0.18); text-transform: uppercase;
+      padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* ── Main content area ── */
+    .scroll-area {
+      grid-area: main;
+      height: 100vh;
+      padding-bottom: 60px;
+      background: #ECEAF2;
+    }
+
+    /* ── Wider content spacing ── */
+    .hero          { padding: 44px 52px 36px; }
+    .hero h2       { font-size: 2rem; }
+    .sec-head      { padding: 28px 52px 12px; }
+    .featured      { margin: 0 52px; }
+    .cards         { padding: 0 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .data-wrap     { padding: 0 52px; }
+    .insight-wrap  { padding: 0 52px; }
+    .tools-wrap    { padding: 0 52px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .q-wrap        { padding: 0 52px; }
+    .cierre-wrap   { padding: 0 52px; }
+    .divider       { margin: 14px 52px; }
+
+    /* ── Card sizing tweaks on desktop ── */
+    .card h3       { font-size: 0.97rem; }
+    .featured h3   { font-size: 1.2rem; }
+    .hero-hook     { font-size: 0.9rem; max-width: 600px; }
+    .hero-stats    { gap: 36px; }
+
+    /* ── Data panel inline ── */
+    .data-items    { gap: 18px; }
+    .data-num      { font-size: 1.7rem; min-width: 64px; }
+
+    /* ── Inline padding overrides from buildSabiasQue ── */
+    [style*="padding:0 20px"] { padding: 0 52px !important; }
+    [style*="padding: 0 20px"] { padding: 0 52px !important; }
+  }
+
+  @media (min-width: 1200px) {
+    .phone { grid-template-columns: 260px 1fr; }
+    .desktop-sidebar { padding: 40px 28px 36px; }
+    .ds-brand { font-size: 1.35rem; }
+    .cards  { grid-template-columns: repeat(3, 1fr); }
+    .tools-wrap { grid-template-columns: repeat(3, 1fr); }
+  }
+
   /* ── HEARTS RATING ── */
   .hearts-row {
     display: flex; justify-content: center; gap: 10px;
@@ -457,6 +584,21 @@
 <body>
 <div class="phone">
   <div class="notch"></div>
+
+  <!-- ═══ DESKTOP SIDEBAR (hidden on mobile via CSS) ═══ -->
+  <div class="desktop-sidebar" id="desktopSidebar">
+    <div class="ds-brand">Ali's<span class="ds-brand-dot"> ✦</span> Newsletter</div>
+    <div class="ds-edition">Edición #033 · Lima</div>
+    <nav class="ds-nav">
+      <div class="ds-item active" data-panel="hoy"><span class="ds-icon">📰</span> Hoy</div>
+      <div class="ds-item" data-panel="data"><span class="ds-icon">📊</span> Data</div>
+      <div class="ds-item" data-panel="insight"><span class="ds-icon">🧠</span> Insight</div>
+      <div class="ds-item" data-panel="tools"><span class="ds-icon">🛠️</span> Tools</div>
+      <div class="ds-item" data-panel="archivo"><span class="ds-icon">📚</span> Archivo</div>
+    </nav>
+    <div class="ds-footer">martes 28 de julio, 2026</div>
+  </div>
+
   <div class="topbar">
     <div class="topbar-row1" style="justify-content:center;">
       <div class="brand">Ali's<span class="brand-dot"> ✦</span> Newsletter</div>
@@ -476,9 +618,9 @@
       <div class="hero">
         <div class="hero-eyebrow"><span class="hero-date">martes 28 de julio, 2026</span> · Lima Metropolitana</div>
         <h2>Estrategias de marketing de —<br>influencia para transformar colaboraciones aisladas en activos estables</h2>
-        <p class="hero-hook" style="color:rgba(255,255,255,0.92);">Hoy hablamos de marketing de influencia y sus nuevas tendencias, como abuelos influencers y colaboraciones estratégicas.</p>
+        <p class="hero-hook" style="color:rgba(255,255,255,0.92);">Hoy hablamos de marketing experiencial y estrategias de influencia.</p>
         <div class="hero-stats">
-          <div class="hero-stat"><span class="hero-stat-num">7</span><span class="hero-stat-label">artículos</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">8</span><span class="hero-stat-label">artículos</span></div>
           <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">pilares</span></div>
           <div class="hero-stat"><span class="hero-stat-num">7'</span><span class="hero-stat-label">lectura</span></div>
         </div>
@@ -491,13 +633,13 @@
       <div class="featured">
         <div class="feat-label">Publicidad &amp; Estrategia</div>
         <h3>Estrategias de marketing de influencia para transformar colaboraciones aisladas en activos estables - PuroMarketing</h3>
-        <p>La publicidad y la estrategia en el ecosistema comercial peruano y latinoamericano están experimentando un cambio significativo, impulsado por la influencia de las redes sociales y la creatividad en la promoción de productos. Un ejemplo de...</p>
+        <p>La publicidad y la estrategia en el ecosistema comercial peruano y latinoamericano están experimentando un giro interesante con la incorporación de nuevos formatos y canales de comunicación. Un ejemplo de esto es el surgimiento de abuelos i...</p>
         <a class="read-more" href="https://www.google.com/search?q=Estrategias%20de%20marketing%20de%20influencia%20para%20transformar%20colaboraciones%20aisladas%20en%20activos%20estables%20-%20PuroMarketing" target="_blank" rel="noopener">Buscar más →</a>
       </div>
       <div class="gap-md"></div>
       <div class="sec-head">
         <span class="sec-title">Noticias de hoy</span>
-        <span class="sec-badge">7 artículos</span>
+        <span class="sec-badge">8 artículos</span>
       </div>
       <div class="cards">
         
@@ -511,8 +653,26 @@
             <p class="card-snippet">Los abuelos influencers que triunfan en las redes sociales con millones de seguidores  PuroMarketing</p>
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 18h</span>
+            <span class="card-time">Hace 19h</span>
             <a class="card-cta" href="https://www.google.com/search?q=Los%20abuelos%20influencers%20que%20triunfan%20en%20las%20redes%20sociales%20con%20millones%20de%20seguidores%20-%20PuroMarketing" target="_blank" rel="noopener"
+               style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
+              Buscar más →
+            </a>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://www.google.com/search?q=Carolina%20Herrera%20apuesta%20por%20el%20marketing%20experiencial%20con%20la%20apertura%20de%20212%20HOUSE%20en%20Buenos%20Aires%20-%20FashionNetwork%20France','_blank')">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Industria &amp; Retail</span>
+              <span class="card-source">Fashion Network PE</span>
+            </div>
+            <h3>Carolina Herrera apuesta por el marketing experiencial con la apertura de 212 HOUSE en Buenos Aires - FashionNetwork France</h3>
+            <p class="card-snippet">Carolina Herrera apuesta por el marketing experiencial con la apertura de 212 HOUSE en Buenos Aires  FashionNetwork...</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Hace menos de 1h</span>
+            <a class="card-cta" href="https://www.google.com/search?q=Carolina%20Herrera%20apuesta%20por%20el%20marketing%20experiencial%20con%20la%20apertura%20de%20212%20HOUSE%20en%20Buenos%20Aires%20-%20FashionNetwork%20France" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Buscar más →
             </a>
@@ -529,7 +689,7 @@
             <p class="card-snippet">Puma convierte la nueva camiseta oficial del Valencia CF en un monumento gigante  PuroMarketing</p>
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 18h</span>
+            <span class="card-time">Hace 19h</span>
             <a class="card-cta" href="https://www.google.com/search?q=Puma%20convierte%20la%20nueva%20camiseta%20oficial%20del%20Valencia%20CF%20en%20un%20monumento%20gigante%20-%20PuroMarketing" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Buscar más →
@@ -619,7 +779,7 @@
             💡 Dato del día
           </div>
           <p style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-style:normal;font-weight:500;
-                    color:var(--ink);line-height:1.6;margin:0;">¿Sabías que la tercera generación de Kola Escocesa logró un crecimiento del 8% en el primer semestre en Lima gracias a una estrategia que prioriza el canal tradicional y nuevas inversiones en marcas como Pasteurina? Esto muestra un potencial de crecimiento en el mercado peruano para empresas que se enfocan en innovación y comercialización efectiva.</p>
+                    color:var(--ink);line-height:1.6;margin:0;">¿Sabías que la tercera generación de Kola Escocesa logró un crecimiento del 8% en el primer semestre en Lima con marcas como Pasteurina y Soda Fontainebleau, lo que sugiere una tendencia hacia la preferencia de los consumidores peruanos por marcas tradicionales y locales? Esto podría influir en las estrategias de marketing de otras empresas en el mercado peruano.</p>
         </div>
       </div>
       <div class="gap-md"></div>
@@ -641,7 +801,7 @@
       <div class="gap-md"></div>
       <div class="cierre-wrap">
         <div class="cierre-card">
-          <p>"La verdadera innovación no reside en la creación de algo nuevo, sino en la capacidad de hacer que lo nuevo sea inevitable."</p>
+          <p>"La verdadera innovación no surge de la tecnología, sino de la capacidad de entender los deseos que no sabemos expresar."</p>
           <div class="firma">Alice Romero León</div>
           <div class="firma-sub">ESTRATEGA DE COMPORTAMIENTO DEL CONSUMIDOR · LIMA</div>
         </div>
@@ -695,7 +855,7 @@
                       margin-bottom:10px;font-weight:600;">01 · Patrón detectado</div>
           <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
                     color:rgba(255,255,255,0.9);
-                    line-height:1.65;margin:0;">Los consumidores en Lima Metropolitana están buscando formas de ahorrar electricidad sin sacrificar su confort, lo que puede ser una oportunidad para marcas que ofrezcan soluciones energéticas eficientes.</p>
+                    line-height:1.65;margin:0;">La experiencia del cliente se vuelve cada vez más importante, por lo que las marcas deben invertir en marketing experiencial para conectar con sus audiencias de manera más profunda y personalizada.</p>
         </div>
 
         <div style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);border-radius:16px;padding:20px;
@@ -705,7 +865,7 @@
                       margin-bottom:10px;font-weight:600;">02 · Tensión de mercado</div>
           <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
                     color:var(--ink);
-                    line-height:1.65;margin:0;">La relación diplomática entre Argentina y Brasil no se verá afectada por los insultos del presidente Milei, lo que sugiere que los acuerdos comerciales entre ambos países seguirán firme, beneficiando a las empresas que operan en la región.</p>
+                    line-height:1.65;margin:0;">Los eventos en vivo y las transmisiones en línea pueden ser una oportunidad para que las marcas se conecten con su audiencia y aumenten su visibilidad, especialmente en fechas importantes como las Fiestas Patrias.</p>
         </div>
 
         <div style="background:linear-gradient(135deg,#0D2137,#1B3A2D);border-radius:16px;padding:20px;
@@ -715,7 +875,7 @@
                       margin-bottom:10px;font-weight:600;">03 · Oportunidad</div>
           <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
                     color:rgba(255,255,255,0.88);
-                    line-height:1.65;margin:0;">La nueva normativa que hace opcional el seguro de desgravamen puede generar oportunidades para las entidades financieras que ofrezcan créditos innovadores y personalizados a sus clientes.</p>
+                    line-height:1.65;margin:0;">La tendencia del "coffee as a service" y la expansión de Neira Café Lab pueden ser un ejemplo para otras marcas de cómo innovar y expandirse en el mercado peruano y latinoamericano.</p>
         </div>
 
         <div style="background:linear-gradient(135deg,#4A1B7A,#7B1FA2);border-radius:16px;padding:20px;
@@ -725,7 +885,7 @@
                       margin-bottom:10px;font-weight:600;">04 · Señal cultural</div>
           <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
                     color:rgba(255,255,255,0.92);
-                    line-height:1.65;margin:0;">La tercera generación de Kola Escocesa está apostando por la innovación y el fortalecimiento de marcas como Pasteurina, lo que puede ser un ejemplo a seguir para otras empresas que buscan crecer en el mercado limeño.</p>
+                    line-height:1.65;margin:0;">La conciencia sobre el consumo de energía y el ahorro pueden ser un tema relevante para las marcas que buscan conectar con sus audiencias y promover prácticas sostenibles.</p>
         </div>
 
         <div style="background:#fff;border-radius:16px;padding:20px;
@@ -735,7 +895,7 @@
                       margin-bottom:10px;font-weight:600;">05 · Insight accionable</div>
           <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
                     color:var(--ink-mid);
-                    line-height:1.65;margin:0;">La creciente demanda de créditos hipotecarios en Lima Metropolitana puede ser una oportunidad para las empresas que ofrezcan soluciones financieras y de vivienda innovadoras y accesibles a los consumidores.</p>
+                    line-height:1.65;margin:0;">La tecnología de automatización y colaboración, como Gemini Spark y Omni, puede ser una herramienta valiosa para que las marcas optimicen sus procesos y tomen decisiones más informadas, lo que puede ser especialmente útil en el contexto del marketing y la venta en línea.</p>
         </div></div>
       <div class="gap-lg"></div>
     </div>
@@ -756,11 +916,11 @@
         <div class="tool-card">
           <div class="tool-icon">⚡</div>
           <div style="flex:1;">
-            <div class="tool-lbl">Inteligencia Artificial · Herramienta del día</div>
-            <h3>Luma AI</h3>
-            <p>Análisis de comportamiento de consumidor y predicción de tendencias</p>
+            <div class="tool-lbl">Herramienta de marketing de contenido · Herramienta del día</div>
+            <h3>Clay</h3>
+            <p>Generar contenido de alta calidad mediante IA</p>
             <p style="margin-top:6px;font-size:0.72rem;color:var(--rose);font-weight:600;">
-              📍 Lima: Análisis de preferencias de los consumidores de Kola Escocesa en Lima para mejorar la estrategia de marketing
+              📍 Lima: Una marca de ropa en Lima podría utilizar Clay para generar descripciones de productos atractivas y personalizadas para su sitio web
             </p>
           </div>
         </div>
@@ -792,10 +952,28 @@
       </div>
       <div class="sec-head">
         <span class="sec-title">Ediciones publicadas</span>
-        <span class="sec-badge">32 ediciónes</span>
+        <span class="sec-badge">33 ediciónes</span>
       </div>
       <div class="cards">
         
+        <div class="card" style="border-left:3px solid var(--rose);">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #032</span>
+              <span class="card-source">2026-07-29</span>
+            </div>
+            <h3>Estrategias de marketing de influencia para transformar colaboraciones aisladas </h3>
+            <p class="card-snippet">24 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            <a class="card-cta" href="https://www.google.com/search?q=Estrategias%20de%20marketing%20de%20influencia%20para%20transformar%20colaboraciones%20aisladas%20" target="_blank" rel="noopener"
+               style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
+              Buscar más →
+            </a>
+          </div>
+        </div>
+
         <div class="card" style="border-left:3px solid var(--rose);">
           <div class="card-top">
             <div class="card-meta">
@@ -1356,7 +1534,7 @@
         <div class="card" style="opacity:0.4;pointer-events:none;">
           <div class="card-top">
             <div class="card-meta">
-              <span class="pilar p-tech">Edición #033</span>
+              <span class="pilar p-tech">Edición #034</span>
               <span class="card-source">Próxima</span>
             </div>
             <h3>Próxima edición</h3>
@@ -1397,6 +1575,9 @@
     document.querySelectorAll('.nav-item').forEach(function(n) {
       n.classList.toggle('active', n.dataset.panel === panelId);
     });
+    document.querySelectorAll('.ds-item').forEach(function(n) {
+      n.classList.toggle('active', n.dataset.panel === panelId);
+    });
   }
 
   function addTap(el, fn) {
@@ -1414,6 +1595,10 @@
   });
 
   document.querySelectorAll('.nav-item').forEach(function(item) {
+    addTap(item, function() { syncAll(item.dataset.panel); });
+  });
+
+  document.querySelectorAll('.ds-item').forEach(function(item) {
     addTap(item, function() { syncAll(item.dataset.panel); });
   });
 
