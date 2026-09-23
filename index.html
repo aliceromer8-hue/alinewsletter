@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#C2185B">
-<meta name="description" content="Ali's Newsletter — Edición #001 · martes 22 de septiembre, 2026">
-<title>Ali's Newsletter — Edición #001</title>
+<meta name="description" content="Ali's Newsletter — Edición #016 · martes 22 de septiembre, 2026">
+<title>Ali's Newsletter — Edición #016</title>
 <link rel="manifest" href="/alinewsletter/manifest.json">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -162,12 +162,87 @@
     font-family: 'DM Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase;
   }
 
-  .hero-readers {
-    margin-top: 14px;
-    font-family: 'DM Mono', monospace;
-    font-size: 0.62rem; letter-spacing: 0.08em;
-    color: rgba(255,255,255,0.5);
+  .hero-cta {
+    margin-top: 18px; position: relative; z-index: 1;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px 14px;
   }
+  .hero-cta-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: #fff; color: var(--rose);
+    font-size: 0.78rem; font-weight: 600; text-decoration: none;
+    padding: 10px 18px; border-radius: 24px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.22);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .hero-cta-btn:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,0,0,0.28); }
+  .hero-readers {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.6);
+  }
+
+  /* ── SUBSCRIBE ── */
+  .sub-wrap { padding: 18px 20px 0; }
+  .sub-card {
+    background: linear-gradient(145deg, #1A1A2E 0%, #3A1640 70%, #8B1A55 100%);
+    border-radius: 22px; padding: 24px 20px 20px;
+    position: relative; overflow: hidden; color: #fff;
+  }
+  .sub-card::after {
+    content: '✦'; position: absolute; top: 14px; right: 18px;
+    font-size: 0.8rem; color: rgba(248,187,217,0.5);
+  }
+  .sub-eyebrow {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: #F8BBD9; margin-bottom: 10px;
+  }
+  .sub-card h3 {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 1.18rem; font-weight: 700; line-height: 1.3; margin-bottom: 8px;
+  }
+  .sub-card > p { font-size: 0.8rem; line-height: 1.6; color: rgba(255,255,255,0.78); margin-bottom: 16px; }
+  .sub-row { display: flex; gap: 8px; }
+  .sub-input {
+    flex: 1; min-width: 0;
+    font: 500 0.85rem 'DM Sans', sans-serif; color: var(--ink);
+    background: #fff; border: 1.5px solid transparent;
+    border-radius: 14px; padding: 12px 14px; outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .sub-input:focus { border-color: #F8BBD9; box-shadow: 0 0 0 3px rgba(248,187,217,0.35); }
+  .sub-input.invalid { border-color: #FF8A80; }
+  .sub-btn {
+    flex-shrink: 0; cursor: pointer; border: none;
+    font: 600 0.82rem 'DM Sans', sans-serif; color: #fff;
+    background: linear-gradient(135deg, var(--rose), var(--rose-mid));
+    border-radius: 14px; padding: 0 16px;
+    box-shadow: 0 4px 14px rgba(194,24,91,0.4);
+    transition: transform 0.2s, opacity 0.2s;
+    touch-action: manipulation;
+  }
+  .sub-btn:hover { transform: translateY(-1px); }
+  .sub-btn:disabled { opacity: 0.6; cursor: wait; transform: none; }
+  .sub-hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+  .sub-fine {
+    font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.5); margin-top: 10px;
+  }
+  .sub-msg { font-size: 0.78rem; font-weight: 500; margin-top: 8px; min-height: 0; }
+  .sub-msg:empty { display: none; }
+  .sub-msg.error { color: #FFB4AB; }
+  .sub-done {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: rgba(255,255,255,0.1); border-radius: 14px; padding: 14px;
+    font-size: 0.82rem; line-height: 1.5;
+  }
+  .sub-done strong { display: block; color: #F8BBD9; font-family: 'Playfair Display', serif; font-style: italic; font-size: 0.95rem; }
+  @media (max-width: 340px) {
+    .sub-row { flex-direction: column; }
+    .sub-btn { padding: 12px; }
+  }
+  /* once subscribed, every invitation disappears */
+  .is-subscribed [data-sub-block]:not(.sub-keep) { display: none !important; }
 
   /* ── SECTION HEADERS ── */
   .sec-head {
@@ -303,9 +378,37 @@
   .data-text { font-size: 0.79rem; color: rgba(255,255,255,0.73); line-height: 1.55; padding-top: 2px; }
   .data-src {
     font-family: 'DM Mono', monospace;
-    font-size: 0.58rem; color: rgba(255,255,255,0.32);
-    display: block; margin-top: 3px;
+    font-size: 0.58rem; color: rgba(255,255,255,0.4);
+    display: block; margin-top: 4px;
   }
+  a.data-item { text-decoration: none; color: inherit; transition: opacity 0.2s; }
+  a.data-item:hover .data-text { color: #fff; }
+
+  .radar-card {
+    background: var(--ink); border-radius: 20px; padding: 20px 22px;
+    display: flex; flex-direction: column; gap: 14px;
+  }
+  .bar-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .bar-label { font-size: 0.8rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+  .bar-val { font-family: 'Playfair Display', serif; font-weight: 800; font-size: 1.05rem; color: #F8BBD9; }
+  .bar-track { height: 8px; border-radius: 8px; background: rgba(255,255,255,0.09); overflow: hidden; }
+  .bar-fill {
+    height: 100%; border-radius: 8px;
+    background: linear-gradient(90deg, var(--rose), #F8BBD9);
+    transform-origin: left; animation: barGrow 0.9s cubic-bezier(.2,.8,.2,1) both;
+  }
+  .bar-count { font-family: 'DM Mono', monospace; font-size: 0.56rem; color: rgba(255,255,255,0.38); margin-top: 4px; }
+  .radar-light { background: #fff; border: 1px solid var(--border); }
+  .radar-light .bar-label { color: var(--ink); }
+  .radar-light .bar-val { color: var(--rose); }
+  .radar-light .bar-track { background: var(--rose-light); }
+  .radar-light .bar-count { color: var(--muted); }
+  .radar-empty { font-size: 0.8rem; color: rgba(255,255,255,0.55); font-style: italic; }
+  .data-note {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem; line-height: 1.6;
+    color: var(--muted); padding: 14px 20px 0;
+  }
+  @keyframes barGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
   /* ── INSIGHT PANEL ── */
   .insight-wrap { padding: 0 20px; display: flex; flex-direction: column; gap: 14px; }
@@ -482,7 +585,8 @@
       position: sticky;
       top: 0;
       height: 100vh;
-      overflow: hidden;
+      overflow-y: auto;
+      scrollbar-width: none;
     }
     .ds-brand {
       font-family: 'Playfair Display', serif;
@@ -514,6 +618,22 @@
       border: 1px solid rgba(194,24,91,0.3);
     }
     .ds-icon { font-size: 1rem; width: 22px; text-align: center; flex-shrink: 0; }
+    .ds-sub {
+      margin: 16px 0 18px; padding: 16px 14px;
+      border-radius: 16px;
+      background: linear-gradient(145deg, rgba(194,24,91,0.22), rgba(123,31,162,0.18));
+      border: 1px solid rgba(248,187,217,0.18);
+    }
+    .ds-sub-title {
+      font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700;
+      font-size: 0.95rem; color: #fff; margin-bottom: 4px;
+    }
+    .ds-sub-text { font-size: 0.7rem; line-height: 1.5; color: rgba(255,255,255,0.6); margin-bottom: 12px; }
+    .sub-dark .sub-row { flex-direction: column; }
+    .sub-dark .sub-input { padding: 10px 12px; font-size: 0.78rem; }
+    .sub-dark .sub-btn { padding: 10px; }
+    .sub-dark .sub-fine { font-size: 0.5rem; }
+    .sub-dark .sub-done { font-size: 0.74rem; }
     .ds-footer {
       font-family: 'DM Mono', monospace;
       font-size: 0.52rem; letter-spacing: 0.14em;
@@ -541,6 +661,14 @@
     .q-wrap        { padding: 0 52px; }
     .cierre-wrap   { padding: 0 52px; }
     .divider       { margin: 14px 52px; }
+    .sub-wrap      { padding: 24px 52px 0; }
+    .sub-card      { padding: 32px 36px 28px; }
+    .sub-card h3   { font-size: 1.45rem; max-width: 560px; }
+    .sub-card > p  { max-width: 560px; }
+    .sub-card .sub-form { max-width: 480px; }
+    .data-note     { padding: 14px 52px 0; }
+    /* the sidebar already invites on desktop — no need for the hero button */
+    .hero-cta      { display: none; }
 
     /* ── Card sizing tweaks on desktop ── */
     .card h3       { font-size: 0.97rem; }
@@ -588,14 +716,14 @@
 </style>
 <script>if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('/alinewsletter/sw.js').catch(()=>{}));</script>
 </head>
-<body>
+<body data-sub-endpoint="" data-sub-mail="alice.romer8@gmail.com" data-edition="016">
 <div class="phone">
   <div class="notch"></div>
 
   <!-- ═══ DESKTOP SIDEBAR (hidden on mobile via CSS) ═══ -->
   <div class="desktop-sidebar" id="desktopSidebar">
     <div class="ds-brand">Ali's<span class="ds-brand-dot"> ✦</span> Newsletter</div>
-    <div class="ds-edition">Edición #001 · Lima</div>
+    <div class="ds-edition">Edición #016 · Lima</div>
     <nav class="ds-nav">
       <div class="ds-item active" data-panel="hoy"><span class="ds-icon">📰</span> Hoy</div>
       <div class="ds-item" data-panel="data"><span class="ds-icon">📊</span> Data</div>
@@ -603,6 +731,21 @@
       <div class="ds-item" data-panel="tools"><span class="ds-icon">🛠️</span> Tools</div>
       <div class="ds-item" data-panel="archivo"><span class="ds-icon">📚</span> Archivo</div>
     </nav>
+    <div class="ds-sub" data-sub-block>
+      <div class="ds-sub-title">Recíbelo en tu correo</div>
+      <div class="ds-sub-text">Sé de los primeros en recibirlo. Gratis, cada día hábil.</div>
+      
+          <form class="sub-form sub-dark" data-origen="sidebar" novalidate>
+            <div class="sub-row">
+              <input class="sub-input" type="email" name="email" inputmode="email" autocomplete="email"
+                     placeholder="tu@correo.com" aria-label="Tu correo" required>
+              <button class="sub-btn" type="submit">Suscribirme</button>
+            </div>
+            <input class="sub-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="sub-fine">Gratis · 7 minutos al mediodía · te das de baja con un clic</p>
+            <p class="sub-msg" role="status" aria-live="polite"></p>
+          </form>
+    </div>
     <div class="ds-footer">martes 22 de septiembre, 2026</div>
   </div>
 
@@ -625,13 +768,16 @@
       <div class="hero">
         <div class="hero-eyebrow"><span class="hero-date">martes 22 de septiembre, 2026</span> · Lima Metropolitana</div>
         <h2>La nueva estrategia —<br>publicitaria de Papa Johns juega con el concepto de la masa madre</h2>
-        <p class="hero-hook" style="color:rgba(255,255,255,0.92);">Lo más relevante del ecosistema de marketing en Lima — seleccionado y analizado para ti.</p>
+        <p class="hero-hook" style="color:rgba(255,255,255,0.92);">Los reguladores aprietan y el crédito se abre: si no ajustas hoy tu mix urbano, mañana tu marca perderá la única calle que aún compra.</p>
         <div class="hero-stats">
-          <div class="hero-stat"><span class="hero-stat-num">13</span><span class="hero-stat-label">artículos</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">12</span><span class="hero-stat-label">artículos</span></div>
           <div class="hero-stat"><span class="hero-stat-num">5</span><span class="hero-stat-label">pilares</span></div>
           <div class="hero-stat"><span class="hero-stat-num">7'</span><span class="hero-stat-label">lectura</span></div>
         </div>
-        <div class="hero-readers">👥 10 marketers en Lima leyeron esta edición</div>
+        <div class="hero-cta" data-sub-block>
+          <a class="hero-cta-btn" href="#suscribirme" data-sub-jump>💌 Recíbelo gratis en tu correo</a>
+          <span class="hero-readers">Sé de los primeros en recibirlo</span>
+        </div>
       </div>
       <div class="sec-head">
         <span class="sec-title">Historia del día</span>
@@ -640,14 +786,14 @@
       
       <div class="featured">
         <div class="feat-label">Publicidad &amp; Estrategia</div>
-        <h3>La nueva estrategia publicitaria de Papa Johns juega con el concepto de la masa madre - PuroMarketing</h3>
-        <p>La nueva estrategia publicitaria de Papa Johns juega con el concepto de la masa madre  PuroMarketing</p>
+        <h3>La nueva estrategia publicitaria de Papa Johns juega con el concepto de la masa madre</h3>
+        <p>En la jornada de hoy se dibuja un patrón claro: la convergencia entre storytelling auténtico, alianzas tecnológicas y la necesidad de datos limpios para ejecutar campañas que realmente resuenen con el consumidor peruano y latinoamericano....</p>
         <a class="read-more" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQU0JFeHd1YkxfaVZyeXNpWVRBbldaM0hZMWFieXAwb3RFS3gybl9SRHpMbk1IbnFuM0lqNnlfN2dFUHpLbWZRQzA3NGFZZEZ1aGpqQjd2ckdiVng0TG5yYTE1cVh5a2dac2w1OTg3SU04WW1HdXcyV2xwVnpDOFBKN2N2T3RMX0lpS19qcGJXeVJXWnZ1aVZsUk9TdUljZTNfYmVyRGEwbko5UQ?oc=5" target="_blank" rel="noopener">Leer artículo →</a>
       </div>
       <div class="gap-md"></div>
       <div class="sec-head">
         <span class="sec-title">Noticias de hoy</span>
-        <span class="sec-badge">13 artículos</span>
+        <span class="sec-badge">12 artículos</span>
       </div>
       <div class="cards">
         
@@ -657,11 +803,11 @@
               <span class="pilar p-publicidad">Publicidad &amp; Estrategia</span>
               <span class="card-source">Puro Marketing</span>
             </div>
-            <h3>Equativ lleva la publicidad de ChatGPT a las marcas como socio oficial - PuroMarketing</h3>
-            <p class="card-snippet">Equativ lleva la publicidad de ChatGPT a las marcas como socio oficial  PuroMarketing</p>
+            <h3>Equativ lleva la publicidad de ChatGPT a las marcas como socio oficial</h3>
+            
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 9h</span>
+            <span class="card-time">Hace 17h</span>
             <a class="card-cta" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxNTktUQnNKUVlHQUFaRWFLRzRoU2d6MDVlSFFETkd5THVnck5EQ25zbE81Q0VybmRRRE1MYzE5VER1TmhxTXloUWQ2c0FyakxxWGxTSllud0llRFFMd1M5bTMyRmZiRkdKYzdZZVJEd2hpd1FfZFppMDJSdmVSYVZnQ0NzdUZDNnZ5dW13SjFPVmRMVXktclREMzM1U3BjR0gx?oc=5" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
@@ -676,29 +822,11 @@
               <span class="card-source">Marketing Latam</span>
             </div>
             <h3>LatAm Intersect: La batalla por la atención del consumidor centroamericano - produ</h3>
-            <p class="card-snippet">LatAm Intersect: La batalla por la atención del consumidor centroamericano  produ</p>
+            
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 19h</span>
+            <span class="card-time">Hoy</span>
             <a class="card-cta" href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNbGdpU0lrLVlqUkplNU5UejFKUGh0WXRhd3hlTjRkYVo5c1kxVXRpUEpjNF9LUUtON3I0Z25Uck13QWxobWtGcjRNak9za1FsX05qUWxsMlNjV3JEOTZLVGhMZmFrYVJNSEFobExMYkd4MEFodVFkay1XN2w3aExNWGNSYjNwTmJMR3c0?oc=5" target="_blank" rel="noopener"
-               style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
-              Leer artículo →
-            </a>
-          </div>
-        </div>
-
-        <div class="card" onclick="window.open('https://marketing4ecommerce.co/tiktok-ads-cuesta-menos-pero-nueve-de-cada-diez-anunciantes-siguen-eligiendo-solo-a-meta/','_blank')">
-          <div class="card-top">
-            <div class="card-meta">
-              <span class="pilar p-tech">Plataformas &amp; Tech</span>
-              <span class="card-source">Marketing4Ecommerce CO</span>
-            </div>
-            <h3>TikTok Ads cuesta menos… pero nueve de cada diez anunciantes siguen eligiendo sólo a Meta</h3>
-            <p class="card-snippet">Según un estudio de Metricool, TikTok ofrece CPC, CPL y CPM más bajos, pero Meta sigue dominando la inversión publi...</p>
-          </div>
-          <div class="card-footer">
-            <span class="card-time">Hace 3h</span>
-            <a class="card-cta" href="https://marketing4ecommerce.co/tiktok-ads-cuesta-menos-pero-nueve-de-cada-diez-anunciantes-siguen-eligiendo-solo-a-meta/" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
             </a>
@@ -715,7 +843,7 @@
             <p class="card-snippet">Medir el ROI de una estrategia GEO es mucho más que el tráfico y las posiciones tradicionales. En GEO, el valor est...</p>
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 6h</span>
+            <span class="card-time">Hace 14h</span>
             <a class="card-cta" href="https://www.cyberclick.es/numerical-blog/como-medir-el-roi-de-una-estrategia-geo" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
@@ -734,8 +862,26 @@
 ...</p>
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 8h</span>
+            <span class="card-time">Hace 16h</span>
             <a class="card-cta" href="https://marketing4ecommerce.net/chatgpt-ads-nos-obliga-a-replantear-la-estrategia-de-captacion-educativa/" target="_blank" rel="noopener"
+               style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
+              Leer artículo →
+            </a>
+          </div>
+        </div>
+
+        <div class="card" onclick="window.open('https://marketing4ecommerce.co/tiktok-ads-cuesta-menos-pero-nueve-de-cada-diez-anunciantes-siguen-eligiendo-solo-a-meta/','_blank')">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-tech">Plataformas &amp; Tech</span>
+              <span class="card-source">Marketing4Ecommerce CO</span>
+            </div>
+            <h3>TikTok Ads cuesta menos… pero nueve de cada diez anunciantes siguen eligiendo sólo a Meta</h3>
+            <p class="card-snippet">Según un estudio de Metricool, TikTok ofrece CPC, CPL y CPM más bajos, pero Meta sigue dominando la inversión publi...</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Hace 11h</span>
+            <a class="card-cta" href="https://marketing4ecommerce.co/tiktok-ads-cuesta-menos-pero-nueve-de-cada-diez-anunciantes-siguen-eligiendo-solo-a-meta/" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
             </a>
@@ -748,11 +894,11 @@
               <span class="pilar p-publicidad">Publicidad &amp; Estrategia</span>
               <span class="card-source">Puro Marketing</span>
             </div>
-            <h3>Los cinco fallos de datos que arrastran casi todas las cadenas en Google - PuroMarketing</h3>
-            <p class="card-snippet">Los cinco fallos de datos que arrastran casi todas las cadenas en Google  PuroMarketing</p>
+            <h3>Los cinco fallos de datos que arrastran casi todas las cadenas en Google</h3>
+            
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 9h</span>
+            <span class="card-time">Hace 17h</span>
             <a class="card-cta" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxQeW1BOFFrbnhuVS1qNjd5RTVmVm84T05VV0xhc09jeEk4VzdEdFNpVC1iRHh2X1VqcVRDRDRobjF0SFF5Um50dDhjTzEyalBLTWVEYmlYRFM5RzVMRVBjUzhzZE1LSEVfT3FTanZTSzZScW15aWxMM3NFRVNORm5zYXNnRTJXTEVaQ0RILVN5MWVtV3ItSWF2Zk1n?oc=5" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
@@ -766,11 +912,11 @@
               <span class="pilar p-publicidad">Publicidad &amp; Estrategia</span>
               <span class="card-source">Puro Marketing</span>
             </div>
-            <h3>El impacto comercial de Kylian Mbappé impulsa la entrada de la marca deportiva On en el fútbol - PuroMarketing</h3>
-            <p class="card-snippet">El impacto comercial de Kylian Mbappé impulsa la entrada de la marca deportiva On en el fútbol  PuroMarketing</p>
+            <h3>El impacto comercial de Kylian Mbappé impulsa la entrada de la marca deportiva On en el fútbol</h3>
+            
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 9h</span>
+            <span class="card-time">Hace 17h</span>
             <a class="card-cta" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxNVmtlTW5XaTdFMzJyU0Y3dG16cHJoUVRVZl9iOW5UcGtVWUxOSld3em5nT2lLcGVWQTYtNFEyTmVCVGc0VE5iZWVTMm54QkVkX09RblFfZTBQenhsLWp0TnZ0TlJVcGRPRUhfM2pxWjk1R3VFR2xHWVB3em9NS3RRN2N1VF9NOU5NbUZUYnd4M0x4ZVBOc01qNmtFYzVHbFgzVkZHcUdaR3E5RXJQeGdVeg?oc=5" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
@@ -784,11 +930,11 @@
               <span class="pilar p-publicidad">Publicidad &amp; Estrategia</span>
               <span class="card-source">Puro Marketing</span>
             </div>
-            <h3>VCCP incorpora a Nicolás Grasso como Supervisor Creativo - PuroMarketing</h3>
-            <p class="card-snippet">VCCP incorpora a Nicolás Grasso como Supervisor Creativo  PuroMarketing</p>
+            <h3>VCCP incorpora a Nicolás Grasso como Supervisor Creativo</h3>
+            
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 11h</span>
+            <span class="card-time">Hace 19h</span>
             <a class="card-cta" href="https://news.google.com/rss/articles/CBMimgFBVV95cUxNLVFlTmZGS0dnRU4wSmYyQXNEeDBwZW53Q0QzdmtJWFpSNXllXzZQVXVsUGdPZUhZTlZsZl9rbmRqdFVPWTRVT2d5T1NkVjdJTkJNY0t5bk9oYmxBWWdZc0wzZ3ZoUVpXb2lXcXU5cHY4N2VMVTROQUVKX2tSUy1PeFZYOUxDR2VLTVdKSHVQWU1JdEc0cjNCOS13?oc=5" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
@@ -796,18 +942,18 @@
           </div>
         </div>
 
-        <div class="card" onclick="window.open('https://gestion.pe/economia/empresas/whatsapp-cobrara-por-mensaje-a-empresas-como-impactara-en-sus-ventas-y-atencion-al-cliente-noticia/','_blank')">
+        <div class="card" onclick="window.open('https://gestion.pe/economia/empresas/siderperu-fortalece-su-produccion-de-acero-con-chatarra-y-financiamiento-del-bcp-noticia/','_blank')">
           <div class="card-top">
             <div class="card-meta">
               <span class="pilar p-industria">Industria &amp; Retail</span>
               <span class="card-source">Gestión Negocios</span>
             </div>
-            <h3>WhatsApp cobrará por mensaje a empresas: ¿impactará en sus ventas y atención al cliente?</h3>
-            <p class="card-snippet">Una medida que podría cambiar el rubro empresarial. WhatsApp comenzará a cobrar a algunas empresas por los mensajes...</p>
+            <h3>BCP otorga Línea Verde de hasta US$185 millones a SIDERPERU para compra de chatarra</h3>
+            <p class="card-snippet">BCP otorgó a SIDERPERU una Línea Verde de hasta US$185 millones para financiar la compra de chatarra metálica desti...</p>
           </div>
           <div class="card-footer">
             <span class="card-time">Hace menos de 1h</span>
-            <a class="card-cta" href="https://gestion.pe/economia/empresas/whatsapp-cobrara-por-mensaje-a-empresas-como-impactara-en-sus-ventas-y-atencion-al-cliente-noticia/" target="_blank" rel="noopener"
+            <a class="card-cta" href="https://gestion.pe/economia/empresas/siderperu-fortalece-su-produccion-de-acero-con-chatarra-y-financiamiento-del-bcp-noticia/" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
             </a>
@@ -824,26 +970,8 @@
             <p class="card-snippet">Según un estudio de Metricool, TikTok ofrece CPC, CPL y CPM más bajos, pero Meta sigue dominando la inversión publi...</p>
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 8h</span>
+            <span class="card-time">Hace 16h</span>
             <a class="card-cta" href="https://marketing4ecommerce.net/tiktok-ads-cuesta-menos-pero-nueve-de-cada-diez-anunciantes-siguen-eligiendo-solo-a-meta/" target="_blank" rel="noopener"
-               style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
-              Leer artículo →
-            </a>
-          </div>
-        </div>
-
-        <div class="card" onclick="window.open('https://gestion.pe/economia/empresas/flixbus-inicia-servicio-interprovincial-de-la-mano-con-firma-peruana-detalles-de-la-operacion-noticia/','_blank')">
-          <div class="card-top">
-            <div class="card-meta">
-              <span class="pilar p-industria">Industria &amp; Retail</span>
-              <span class="card-source">Gestión Negocios</span>
-            </div>
-            <h3>FlixBus inicia servicio interprovincial con la conducción de firma peruana</h3>
-            <p class="card-snippet">FlixBus, plataforma tecnológica alemana para la venta de pasajes, anunció el inicio de su servicio de transporte in...</p>
-          </div>
-          <div class="card-footer">
-            <span class="card-time">Hace menos de 1h</span>
-            <a class="card-cta" href="https://gestion.pe/economia/empresas/flixbus-inicia-servicio-interprovincial-de-la-mano-con-firma-peruana-detalles-de-la-operacion-noticia/" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
             </a>
@@ -856,11 +984,11 @@
               <span class="pilar p-publicidad">Publicidad &amp; Estrategia</span>
               <span class="card-source">Puro Marketing</span>
             </div>
-            <h3>Lidl planta un carrito gigante en Madrid para su campaña de marketing de fidelización - PuroMarketing</h3>
-            <p class="card-snippet">Lidl planta un carrito gigante en Madrid para su campaña de marketing de fidelización  PuroMarketing</p>
+            <h3>Lidl planta un carrito gigante en Madrid para su campaña de marketing de fidelización</h3>
+            
           </div>
           <div class="card-footer">
-            <span class="card-time">Hace 12h</span>
+            <span class="card-time">Hace 20h</span>
             <a class="card-cta" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPS3F0ZTlKQ19oUS1Db25PUm9DSjdqOENOVlNBVkk3OUJGc0Fvd3ctZkNQWlhxQ19tWkNPWHhDYzFLNWZ1WXZKTHppTE5nbzBWU0FLT2hvSXNuQlpncGJkcjFKQ3Y3c2xfVnp5TmpSMXdKZzFUZUNuYzBOdG9GZXZMUHNra3NVbkhla2I3YVpTejFmUGxTSlQwWlhZdC05U1RPSUJFMnRNYTZZTmQzVDREOQ?oc=5" target="_blank" rel="noopener"
                style="text-decoration:none;color:var(--rose);font-size:0.68rem;font-weight:600;">
               Leer artículo →
@@ -868,7 +996,39 @@
           </div>
         </div>
       </div>
+      <div id="suscribirme"></div>
       
+      <div class="sub-wrap" data-sub-block>
+        <div class="sub-card">
+          <div class="sub-eyebrow">✦ Cada día hábil a las 12:00</div>
+          <h3>Que esto te llegue a ti, no que tengas que buscarlo.</h3>
+          <p>Las noticias que mueven el marketing en Lima, los números del día y una herramienta para usar hoy. Directo a tu correo.</p>
+          
+          <form class="sub-form" data-origen="hoy" novalidate>
+            <div class="sub-row">
+              <input class="sub-input" type="email" name="email" inputmode="email" autocomplete="email"
+                     placeholder="tu@correo.com" aria-label="Tu correo" required>
+              <button class="sub-btn" type="submit">Suscribirme</button>
+            </div>
+            <input class="sub-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="sub-fine">Gratis · 7 minutos al mediodía · te das de baja con un clic</p>
+            <p class="sub-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+      
+      <div class="gap-md"></div>
+      <div style="padding:0 20px;">
+        <div style="background:linear-gradient(135deg,#EDE7F6,#FCE4EC);border-radius:16px;
+                    padding:18px 20px;border:1px dashed rgba(194,24,91,0.22);">
+          <div style="font-family:'DM Mono',monospace;font-size:0.58rem;letter-spacing:0.18em;
+                      text-transform:uppercase;color:var(--lavender-mid);margin-bottom:8px;font-weight:600;">
+            💡 Dato del día
+          </div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.88rem;font-style:normal;font-weight:500;
+                    color:var(--ink);line-height:1.6;margin:0;">¿Sabías que el candidato a la alcaldía de Lima, Rafael López Aliaga, propone duplicar los ingresos municipales para financiar obras, lo que podría abrir nuevas oportunidades de patrocinio público‑privado en la capital?</p>
+        </div>
+      </div>
       <div class="gap-md"></div>
       <div class="q-wrap">
         <div class="q-card">
@@ -888,7 +1048,7 @@
       <div class="gap-md"></div>
       <div class="cierre-wrap">
         <div class="cierre-card">
-          <p>"Datos sin contexto son ruido. Contexto sin datos es intuición. Necesitas los dos."</p>
+          <p>"El futuro de una marca nace cuando decides escuchar lo que la gente nunca dice."</p>
           <div class="firma">Alice Romero León</div>
           <div class="firma-sub">ESTRATEGA DE COMPORTAMIENTO DEL CONSUMIDOR · LIMA</div>
         </div>
@@ -902,21 +1062,108 @@
       <div class="hero" style="background:linear-gradient(135deg,#1A1A2E 0%,#0D2137 60%,#1A3A4A 100%);">
         <div class="hero-eyebrow">Edición del <span class="hero-date">22 septiembre 2026</span></div>
         <h2>Los números<br>que importan.</h2>
-        <p class="hero-hook">25 artículos monitoreados · 0 con datos cuantitativos.</p>
+        <p class="hero-hook">De qué está hablando hoy el marketing, medido sobre todo lo que monitoreamos.</p>
+        <div class="hero-stats">
+          <div class="hero-stat"><span class="hero-stat-num">26</span><span class="hero-stat-label">artículos</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">8</span><span class="hero-stat-label">fuentes</span></div>
+          <div class="hero-stat"><span class="hero-stat-num">15%</span><span class="hero-stat-label">sobre Perú</span></div>
+        </div>
       </div>
+      
       <div class="sec-head">
-        <span class="sec-title">Data Snapshot</span>
-        <span class="sec-badge">sin datos hoy</span>
+        <span class="sec-title">Cifras del día</span>
+        <span class="sec-badge">con fuente</span>
       </div>
       <div class="data-wrap">
         <div class="data-card">
-          <div class="data-head"><span>📊</span><span>Números de hoy</span></div>
           <div class="data-items">
-            <div class="data-item" style="padding:12px 0;">
-              <div class="data-text" style="color:rgba(255,255,255,0.45);font-style:italic;">
-                No hay datos cuantitativos destacados hoy — vuelve mañana.
-              </div>
+            <a class="data-item" href="https://gestion.pe/economia/empresas/siderperu-fortalece-su-produccion-de-acero-con-chatarra-y-financiamiento-del-bcp-noticia/" target="_blank" rel="noopener">
+              <div class="data-num">US$185 millones</div>
+              <div class="data-text">Límite de financiación para compra de chatarra metálica<span class="data-src">Gestión Negocios ↗</span></div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="sec-head">
+        <span class="sec-title">Radar del día</span>
+        <span class="sec-badge">% de artículos</span>
+      </div>
+      <div class="data-wrap">
+        <div class="radar-card">
+          
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Inteligencia artificial</span><span class="bar-val">23%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">6 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">E-commerce y retail</span><span class="bar-val">23%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">6 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Campañas y branding</span><span class="bar-val">23%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">6 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Consumidor y datos</span><span class="bar-val">23%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">6 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Redes y video corto</span><span class="bar-val">8%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:35%"></div></div>
+              <div class="bar-count">2 artículos</div>
+            </div>
+        </div>
+      </div>
+      
+      <div class="sec-head">
+        <span class="sec-title">Cobertura por pilar</span>
+        <span class="sec-badge">4 de 5</span>
+      </div>
+      <div class="data-wrap">
+        <div class="radar-card radar-light">
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Industria &amp; Retail</span><span class="bar-val">31%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">8 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Plataformas &amp; Tech</span><span class="bar-val">31%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">8 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Publicidad &amp; Estrategia</span><span class="bar-val">31%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+              <div class="bar-count">8 artículos</div>
+            </div>
+            <div class="bar-row">
+              <div class="bar-top"><span class="bar-label">Líderes de Opinión</span><span class="bar-val">8%</span></div>
+              <div class="bar-track"><div class="bar-fill" style="width:26%"></div></div>
+              <div class="bar-count">2 artículos</div>
             </div></div>
+      </div>
+      <p class="data-note">El radar cuenta menciones en titulares y extractos de las 26 notas que leímos hoy. Cada cifra enlaza a su fuente.</p>
+      
+      <div class="sub-wrap" data-sub-block>
+        <div class="sub-card">
+          <div class="sub-eyebrow">✦ Cada día hábil a las 12:00</div>
+          <h3>Que esto te llegue a ti, no que tengas que buscarlo.</h3>
+          <p>Las noticias que mueven el marketing en Lima, los números del día y una herramienta para usar hoy. Directo a tu correo.</p>
+          
+          <form class="sub-form" data-origen="data" novalidate>
+            <div class="sub-row">
+              <input class="sub-input" type="email" name="email" inputmode="email" autocomplete="email"
+                     placeholder="tu@correo.com" aria-label="Tu correo" required>
+              <button class="sub-btn" type="submit">Suscribirme</button>
+            </div>
+            <input class="sub-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="sub-fine">Gratis · 7 minutos al mediodía · te das de baja con un clic</p>
+            <p class="sub-msg" role="status" aria-live="polite"></p>
+          </form>
         </div>
       </div>
       <div class="gap-lg"></div>
@@ -932,10 +1179,77 @@
       </div>
       <div class="sec-head">
         <span class="sec-title">Insights de hoy</span>
-        <span class="sec-badge">0 análisis</span>
+        <span class="sec-badge">5 análisis</span>
       </div>
-      <div class="insight-wrap"><div class="insight-card"><div class="insight-eye">Sin insights hoy</div>
-         <p>No hay suficientes artículos para generar análisis hoy.</p></div></div>
+      <div class="insight-wrap">
+        <div style="background:linear-gradient(135deg,#1A1A2E,#2D1B4E);border-radius:16px;padding:20px;
+   border-left:4px solid #C2185B;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;
+                      text-transform:uppercase;color:rgba(248,187,217,0.8);
+                      margin-bottom:10px;font-weight:600;">01 · Patrón detectado</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
+                    color:rgba(255,255,255,0.9);
+                    line-height:1.65;margin:0;">23% de los artículos tratan IA, e‑commerce y branding, indicando que el ecosistema peruano está convergiendo en tecnología y comercio digital como temas centrales.</p>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#FCE4EC,#F8BBD9);border-radius:16px;padding:20px;
+   border:none;position:relative;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;
+                      text-transform:uppercase;color:rgba(194,24,91,0.7);
+                      margin-bottom:10px;font-weight:600;">02 · Tensión de mercado</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
+                    color:var(--ink);
+                    line-height:1.65;margin:0;">Solo 15% menciona Perú o Lima, reflejando escasa cobertura local y riesgo de que marcas internacionales dominen la conversación.</p>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#0D2137,#1B3A2D);border-radius:16px;padding:20px;
+   border-left:4px solid #4CAF50;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;
+                      text-transform:uppercase;color:rgba(76,175,80,0.85);
+                      margin-bottom:10px;font-weight:600;">03 · Oportunidad</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
+                    color:rgba(255,255,255,0.88);
+                    line-height:1.65;margin:0;">Aprovechar la alta presencia de IA (6 artículos) para lanzar campañas de ChatGPT Ads dirigidas a consumidores limeños, diferenciándose de la competencia.</p>
+        </div>
+
+        <div style="background:linear-gradient(135deg,#4A1B7A,#7B1FA2);border-radius:16px;padding:20px;
+   border:none;">
+          <div style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;
+                      text-transform:uppercase;color:rgba(248,187,217,0.85);
+                      margin-bottom:10px;font-weight:600;">04 · Señal cultural</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
+                    color:rgba(255,255,255,0.92);
+                    line-height:1.65;margin:0;">Papá John’s usa masa madre, señalando que los limeños valoran lo artesanal y saludable; la autenticidad alimenta la conexión emocional.</p>
+        </div>
+
+        <div style="background:#fff;border-radius:16px;padding:20px;
+   border:1.5px solid rgba(194,24,91,0.18);box-shadow:0 4px 18px rgba(194,24,91,0.08);">
+          <div style="font-family:'DM Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;
+                      text-transform:uppercase;color:var(--lavender-mid);
+                      margin-bottom:10px;font-weight:600;">05 · Insight accionable</div>
+          <p style="font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:400;
+                    color:var(--ink-mid);
+                    line-height:1.65;margin:0;">Implementa micro‑segmentación GEO con IA para promocionar productos artesanales en distritos de Lima, midiendo ROI por menciones y conversiones cercanas al punto de compra.</p>
+        </div></div>
+      
+      <div class="sub-wrap" data-sub-block>
+        <div class="sub-card">
+          <div class="sub-eyebrow">✦ Cada día hábil a las 12:00</div>
+          <h3>Que esto te llegue a ti, no que tengas que buscarlo.</h3>
+          <p>Las noticias que mueven el marketing en Lima, los números del día y una herramienta para usar hoy. Directo a tu correo.</p>
+          
+          <form class="sub-form" data-origen="insight" novalidate>
+            <div class="sub-row">
+              <input class="sub-input" type="email" name="email" inputmode="email" autocomplete="email"
+                     placeholder="tu@correo.com" aria-label="Tu correo" required>
+              <button class="sub-btn" type="submit">Suscribirme</button>
+            </div>
+            <input class="sub-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="sub-fine">Gratis · 7 minutos al mediodía · te das de baja con un clic</p>
+            <p class="sub-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
       <div class="gap-lg"></div>
     </div>
 
@@ -955,11 +1269,11 @@
         <div class="tool-card">
           <div class="tool-icon">⚡</div>
           <div style="flex:1;">
-            <div class="tool-lbl">No-code IA · Herramienta del día</div>
-            <h3>Lovable</h3>
-            <p>Crea apps y landing pages completas escribiendo en lenguaje natural — sin código.</p>
+            <div class="tool-lbl">Creación de presentaciones con IA · Herramienta del día</div>
+            <h3>Gamma</h3>
+            <p>Genera presentaciones visuales y narrativas automáticas a partir de texto y datos</p>
             <p style="margin-top:6px;font-size:0.72rem;color:var(--rose);font-weight:600;">
-              📍 Lima: Lanzar una landing de campaña personalizada por segmento en un día.
+              📍 Lima: Una agencia de marketing en Miraflores usa Gamma para transformar datos de consumo de refrescos en Lima en una presentación interactiva para clientes corporativos
             </p>
           </div>
         </div>
@@ -979,6 +1293,25 @@
           </div>
         </div>
       </div>
+      
+      <div class="sub-wrap" data-sub-block>
+        <div class="sub-card">
+          <div class="sub-eyebrow">✦ Cada día hábil a las 12:00</div>
+          <h3>Que esto te llegue a ti, no que tengas que buscarlo.</h3>
+          <p>Las noticias que mueven el marketing en Lima, los números del día y una herramienta para usar hoy. Directo a tu correo.</p>
+          
+          <form class="sub-form" data-origen="tools" novalidate>
+            <div class="sub-row">
+              <input class="sub-input" type="email" name="email" inputmode="email" autocomplete="email"
+                     placeholder="tu@correo.com" aria-label="Tu correo" required>
+              <button class="sub-btn" type="submit">Suscribirme</button>
+            </div>
+            <input class="sub-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <p class="sub-fine">Gratis · 7 minutos al mediodía · te das de baja con un clic</p>
+            <p class="sub-msg" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
       <div class="gap-lg"></div>
     </div>
 
@@ -991,18 +1324,242 @@
       </div>
       <div class="sec-head">
         <span class="sec-title">Ediciones publicadas</span>
-        <span class="sec-badge">1 edición</span>
+        <span class="sec-badge">16 ediciónes</span>
       </div>
       <div class="cards">
         
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #015</span>
+              <span class="card-source">2026-07-30</span>
+            </div>
+            <h3>Los abuelos influencers que triunfan en las redes sociales con millones de segui</h3>
+            <p class="card-snippet">24 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #014</span>
+              <span class="card-source">2026-07-29</span>
+            </div>
+            <h3>Estrategias de marketing de influencia para transformar colaboraciones aisladas</h3>
+            <p class="card-snippet">24 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #013</span>
+              <span class="card-source">2026-07-24</span>
+            </div>
+            <h3>Google Business Profile gana peso en las respuestas locales generadas por la int</h3>
+            <p class="card-snippet">24 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #012</span>
+              <span class="card-source">2026-07-16</span>
+            </div>
+            <h3>Cómo captar la atención digital de los usuarios para mejorar el recuerdo de marc</h3>
+            <p class="card-snippet">24 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #011</span>
+              <span class="card-source">2026-06-29</span>
+            </div>
+            <h3>Krispy Kreme apuesta por el 'hype marketing' en Madrid: un año de dónuts gratis</h3>
+            <p class="card-snippet">15 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #010</span>
+              <span class="card-source">2026-06-28</span>
+            </div>
+            <h3>La nueva Pepsi Zero Mango Tropical busca conquistar al público joven este verano</h3>
+            <p class="card-snippet">18 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #009</span>
+              <span class="card-source">2026-06-26</span>
+            </div>
+            <h3>La nueva metodología de comunicación de APPLE TREE que analiza las respuestas de</h3>
+            <p class="card-snippet">6 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #008</span>
+              <span class="card-source">2026-06-25</span>
+            </div>
+            <h3>Cómo el marketing de contenidos automatizado consigue duplicar el retorno de inv</h3>
+            <p class="card-snippet">22 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #007</span>
+              <span class="card-source">2026-06-06</span>
+            </div>
+            <h3>Los nuevos formatos publicitarios de Amazon Ads impulsan la televisión programát</h3>
+            <p class="card-snippet">20 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #006</span>
+              <span class="card-source">2026-06-05</span>
+            </div>
+            <h3>Los nuevos formatos publicitarios de Amazon Ads impulsan la televisión programát</h3>
+            <p class="card-snippet">19 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #005</span>
+              <span class="card-source">2026-06-04</span>
+            </div>
+            <h3>De Google y Podimo a Está Pasando: La estrategia de Isabel Salazar para agitar e</h3>
+            <p class="card-snippet">18 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #004</span>
+              <span class="card-source">2026-06-03</span>
+            </div>
+            <h3>ISDI y AMKT firman un acuerdo estratégico para impulsar la innovación, el market</h3>
+            <p class="card-snippet">19 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #003</span>
+              <span class="card-source">2026-06-02</span>
+            </div>
+            <h3>Bienvenidos al nuevo Canal de Atención Digital de PuroMarketing, impulsado por E</h3>
+            <p class="card-snippet">22 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #002</span>
+              <span class="card-source">2026-06-01</span>
+            </div>
+            <h3>Cómo Mahou San Miguel y María Pombo transforman el marketing de influencia con Y</h3>
+            <p class="card-snippet">25 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
+
+        <div class="card" style="border-left:3px solid var(--rose);display:block;text-decoration:none;">
+          <div class="card-top">
+            <div class="card-meta">
+              <span class="pilar p-industria">Edición #001</span>
+              <span class="card-source">2026-05-31</span>
+            </div>
+            <h3>Sando, de la hija de Gastón Acurio, llega a Papachos para atraer a nuevas audien</h3>
+            <p class="card-snippet">8 artículos analizados.</p>
+          </div>
+          <div class="card-footer">
+            <span class="card-time">Publicado</span>
+            
+          </div>
+        </div>
         <div class="card" style="opacity:0.4;pointer-events:none;">
           <div class="card-top">
             <div class="card-meta">
-              <span class="pilar p-tech">Edición #002</span>
+              <span class="pilar p-tech">Edición #017</span>
               <span class="card-source">Próxima</span>
             </div>
             <h3>Próxima edición</h3>
-            <p class="card-snippet">Se genera automáticamente cada día hábil a la 1:00 PM (hora Lima).</p>
+            <p class="card-snippet">Se genera automáticamente cada día hábil al mediodía (hora Lima).</p>
           </div>
           <div class="card-footer">
             <span class="card-time">Mañana</span>
@@ -1066,16 +1623,128 @@
     addTap(item, function() { syncAll(item.dataset.panel); });
   });
 
-  function rateNewsletter(val) {
-    var btns = document.querySelectorAll('.heart-btn');
-    var labels = ['', 'Gracias por tu honestidad 🤍', 'Algo interesante, ¿no? 🧡', 'Buena semana de noticias 💛', 'Muy buena edición 🩷', '¡Esta semana estuvo increíble! 🩷🩷🩷'];
-    btns.forEach(function(btn, idx) {
+  // ── Shared helpers ──
+  var SUB_ENDPOINT = document.body.dataset.subEndpoint || '';
+  var SUB_MAIL     = document.body.dataset.subMail || '';
+  var EDITION      = document.body.dataset.edition || '';
+  var EMAIL_RE     = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  function store(key, val) {
+    try { if (val === undefined) return localStorage.getItem(key); localStorage.setItem(key, val); } catch (e) { return null; }
+  }
+
+  // Apps Script answers through a redirect; if the browser can't read the
+  // reply, the request still landed — resend opaquely (the script dedupes).
+  function postToScript(params) {
+    var body = new URLSearchParams(params);
+    return fetch(SUB_ENDPOINT, { method: 'POST', body: body })
+      .then(function (r) { return r.json(); })
+      .catch(function () {
+        return fetch(SUB_ENDPOINT, { method: 'POST', body: body, mode: 'no-cors' })
+          .then(function () { return { ok: true }; });
+      });
+  }
+
+  // ── Subscribe ──
+  function markSubscribed() { document.body.classList.add('is-subscribed'); }
+  if (store('ali_subscribed') === '1') markSubscribed();
+
+  function showDone(form, email) {
+    form.innerHTML =
+      '<div class="sub-done"><span>💌</span><div><strong>¡Listo, ya estás dentro!</strong>' +
+      '<span class="sub-done-text"></span></div></div>';
+    form.querySelector('.sub-done-text').textContent =
+      'Te enviamos una bienvenida a ' + email + '. Si no la ves, revisa spam o promociones.';
+  }
+
+  document.querySelectorAll('.sub-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var input = form.querySelector('.sub-input');
+      var btn   = form.querySelector('.sub-btn');
+      var msg   = form.querySelector('.sub-msg');
+      var email = (input.value || '').trim().toLowerCase();
+      msg.className = 'sub-msg'; msg.textContent = '';
+
+      if (!EMAIL_RE.test(email)) {
+        input.classList.add('invalid');
+        msg.className = 'sub-msg error';
+        msg.textContent = 'Revisa tu correo, parece que falta algo.';
+        input.focus();
+        return;
+      }
+      input.classList.remove('invalid');
+
+      if (!SUB_ENDPOINT) {
+        // Signup backend not configured yet: fall back to an email request.
+        if (SUB_MAIL) {
+          window.location.href = 'mailto:' + SUB_MAIL + '?subject=' + encodeURIComponent('Quiero suscribirme') +
+            '&body=' + encodeURIComponent('Suscríbeme con este correo: ' + email);
+        }
+        return;
+      }
+
+      btn.disabled = true; btn.textContent = 'Enviando…';
+      postToScript({
+        action: 'subscribe', email: email,
+        origen: form.dataset.origen || 'web',
+        website: (form.querySelector('.sub-hp') || {}).value || ''
+      }).then(function (res) {
+        if (res && res.ok) {
+          store('ali_subscribed', '1');
+          showDone(form, email);
+          var block = form.closest('[data-sub-block]');
+          if (block) block.classList.add('sub-keep');
+          // Other invitations on the page fade out after the reader sees the confirmation.
+          setTimeout(markSubscribed, 4000);
+        } else {
+          throw new Error((res && res.error) || 'error');
+        }
+      }).catch(function () {
+        btn.disabled = false; btn.textContent = 'Suscribirme';
+        msg.className = 'sub-msg error';
+        msg.textContent = 'No pudimos registrarte. Inténtalo de nuevo en un momento.';
+      });
+    });
+  });
+
+  // Hero button + shared links like …/alinewsletter/#suscribirme
+  function jumpToSubscribe() {
+    syncAll('hoy');
+    var target = document.getElementById('suscribirme');
+    if (!target) return;
+    setTimeout(function () {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var input = document.querySelector('#panel-hoy .sub-input');
+      if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 450);
+    }, 60);
+  }
+  document.querySelectorAll('[data-sub-jump]').forEach(function (a) {
+    a.addEventListener('click', function (e) { e.preventDefault(); jumpToSubscribe(); });
+  });
+  if (location.hash === '#suscribirme') jumpToSubscribe();
+
+  // ── Hearts rating (saved to the sheet, once per edition) ──
+  function paintHearts(val) {
+    var labels = ['', 'Gracias por tu honestidad 🤍', 'Algo interesante, ¿no? 🧡', 'Buena edición 💛', 'Muy buena edición 🩷', '¡Esta estuvo increíble! 🩷🩷🩷'];
+    document.querySelectorAll('.heart-btn').forEach(function (btn, idx) {
       btn.textContent = (idx < val) ? '🩷' : '🤍';
       btn.classList.toggle('active', idx < val);
     });
     var lbl = document.getElementById('heartsLabel');
     if (lbl) lbl.textContent = labels[val] || '';
   }
+
+  function rateNewsletter(val) {
+    paintHearts(val);
+    var key = 'ali_rated_' + EDITION;
+    if (store(key) || !SUB_ENDPOINT) return;
+    store(key, String(val));
+    postToScript({ action: 'rate', edicion: EDITION, valor: String(val) });
+  }
+
+  var prevRating = parseInt(store('ali_rated_' + EDITION) || '0', 10);
+  if (prevRating) paintHearts(prevRating);
 
 </script>
 </body>
