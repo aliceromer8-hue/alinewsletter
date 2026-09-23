@@ -1,5 +1,5 @@
 {
-  "current": 17,
+  "current": 18,
   "history": [
     {
       "num": 1,
@@ -97,6 +97,13 @@
       "headline": "La nueva estrategia publicitaria de Papa Johns juega con el concepto de la masa madre",
       "articleCount": 26,
       "file": "ediciones/016.html"
+    },
+    {
+      "num": 17,
+      "date": "2026-09-23",
+      "headline": "McDonald’s presenta su nueva estrategia NEXT: invertirá 8,500 millones de dólares y cambia",
+      "articleCount": 33,
+      "file": "ediciones/017.html"
     }
   ]
 }
