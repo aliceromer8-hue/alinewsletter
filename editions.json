@@ -1,5 +1,5 @@
 {
-  "current": 18,
+  "current": 19,
   "history": [
     {
       "num": 1,
@@ -104,6 +104,13 @@
       "headline": "Estos son los 20 CEO con mejor desempeño digital en Perú: ¿quién lidera el ranking?",
       "articleCount": 32,
       "file": "ediciones/017.html"
+    },
+    {
+      "num": 18,
+      "date": "2026-09-24",
+      "headline": "Del e-commerce a las grandes cadenas: la estrategia de Perú Pasión para acelerar MIPYMES e",
+      "articleCount": 31,
+      "file": "ediciones/018.html"
     }
   ]
 }
