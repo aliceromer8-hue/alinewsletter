@@ -1,5 +1,5 @@
 {
-  "current": 19,
+  "current": 20,
   "history": [
     {
       "num": 1,
@@ -111,6 +111,13 @@
       "headline": "Del e-commerce a las grandes cadenas: la estrategia de Perú Pasión para acelerar MIPYMES e",
       "articleCount": 31,
       "file": "ediciones/018.html"
+    },
+    {
+      "num": 19,
+      "date": "2026-09-25",
+      "headline": "Adidas encuentra su nuevo motor en América Latina: futbol y running llevan sus ventas a cr",
+      "articleCount": 27,
+      "file": "ediciones/019.html"
     }
   ]
 }
