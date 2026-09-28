@@ -1,5 +1,5 @@
 {
-  "current": 20,
+  "current": 21,
   "history": [
     {
       "num": 1,
@@ -118,6 +118,13 @@
       "headline": "Adidas encuentra su nuevo motor en América Latina: futbol y running llevan sus ventas a cr",
       "articleCount": 27,
       "file": "ediciones/019.html"
+    },
+    {
+      "num": 20,
+      "date": "2026-09-28",
+      "headline": "Marketing Day 2026: ¿cuál es el valor de los influencers y cómo lograr conexiones genuinas",
+      "articleCount": 26,
+      "file": "ediciones/020.html"
     }
   ]
 }
