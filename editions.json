@@ -1,5 +1,5 @@
 {
-  "current": 21,
+  "current": 22,
   "history": [
     {
       "num": 1,
@@ -125,6 +125,13 @@
       "headline": "Marketing Day 2026: ¿cuál es el valor de los influencers y cómo lograr conexiones genuinas",
       "articleCount": 26,
       "file": "ediciones/020.html"
+    },
+    {
+      "num": 21,
+      "date": "2026-09-29",
+      "headline": "Corona Extra vuelve a ser la marca más valiosa de Latinoamérica: vale 13.9 mil millones de",
+      "articleCount": 30,
+      "file": "ediciones/021.html"
     }
   ]
 }
