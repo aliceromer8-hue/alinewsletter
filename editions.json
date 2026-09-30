@@ -1,5 +1,5 @@
 {
-  "current": 22,
+  "current": 23,
   "history": [
     {
       "num": 1,
@@ -132,6 +132,13 @@
       "headline": "Corona Extra vuelve a ser la marca más valiosa de Latinoamérica: vale 13.9 mil millones de",
       "articleCount": 30,
       "file": "ediciones/021.html"
+    },
+    {
+      "num": 22,
+      "date": "2026-09-30",
+      "headline": "Indecopi declara ilegal cobro del 10% de la UIT por metro cuadrado, exigido por municipali",
+      "articleCount": 35,
+      "file": "ediciones/022.html"
     }
   ]
 }
