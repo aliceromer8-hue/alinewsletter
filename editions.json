@@ -1,5 +1,5 @@
 {
-  "current": 23,
+  "current": 24,
   "history": [
     {
       "num": 1,
@@ -139,6 +139,13 @@
       "headline": "Indecopi declara ilegal cobro del 10% de la UIT por metro cuadrado, exigido por municipali",
       "articleCount": 35,
       "file": "ediciones/022.html"
+    },
+    {
+      "num": 23,
+      "date": "2026-10-01",
+      "headline": "AWLATAM 2026 revela el primer adelanto de su programación oficial para noviembre en el Pap",
+      "articleCount": 34,
+      "file": "ediciones/023.html"
     }
   ]
 }
