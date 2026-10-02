@@ -1,5 +1,5 @@
 {
-  "current": 24,
+  "current": 25,
   "history": [
     {
       "num": 1,
@@ -146,6 +146,13 @@
       "headline": "AWLATAM 2026 revela el primer adelanto de su programación oficial para noviembre en el Pap",
       "articleCount": 34,
       "file": "ediciones/023.html"
+    },
+    {
+      "num": 24,
+      "date": "2026-10-02",
+      "headline": "Mientras Sam’s Club cambia su imagen con un nuevo logo, Walmart lleva Sparky a México como",
+      "articleCount": 30,
+      "file": "ediciones/024.html"
     }
   ]
 }
