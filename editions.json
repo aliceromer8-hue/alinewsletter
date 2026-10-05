@@ -1,5 +1,5 @@
 {
-  "current": 25,
+  "current": 26,
   "history": [
     {
       "num": 1,
@@ -153,6 +153,13 @@
       "headline": "Mientras Sam’s Club cambia su imagen con un nuevo logo, Walmart lleva Sparky a México como",
       "articleCount": 30,
       "file": "ediciones/024.html"
+    },
+    {
+      "num": 25,
+      "date": "2026-10-05",
+      "headline": "“Te vas a querer quedar”: Jockey Plaza evoluciona su propósito de marca y presenta su nuev",
+      "articleCount": 32,
+      "file": "ediciones/025.html"
     }
   ]
 }
