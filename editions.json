@@ -1,5 +1,5 @@
 {
-  "current": 26,
+  "current": 27,
   "history": [
     {
       "num": 1,
@@ -160,6 +160,13 @@
       "headline": "“Te vas a querer quedar”: Jockey Plaza evoluciona su propósito de marca y presenta su nuev",
       "articleCount": 32,
       "file": "ediciones/025.html"
+    },
+    {
+      "num": 26,
+      "date": "2026-10-06",
+      "headline": "Jockey Plaza cambia su estrategia de marca y lanza “Te vas a querer quedar”: ¿qué hay detr",
+      "articleCount": 27,
+      "file": "ediciones/026.html"
     }
   ]
 }
