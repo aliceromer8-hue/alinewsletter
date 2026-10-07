@@ -1,5 +1,5 @@
 {
-  "current": 27,
+  "current": 28,
   "history": [
     {
       "num": 1,
@@ -167,6 +167,13 @@
       "headline": "Jockey Plaza cambia su estrategia de marca y lanza “Te vas a querer quedar”: ¿qué hay detr",
       "articleCount": 27,
       "file": "ediciones/026.html"
+    },
+    {
+      "num": 27,
+      "date": "2026-10-07",
+      "headline": "BTS en Lima mueve a las marcas: así son las activaciones previas a sus tres conciertos",
+      "articleCount": 26,
+      "file": "ediciones/027.html"
     }
   ]
 }
