@@ -1,5 +1,5 @@
 {
-  "current": 28,
+  "current": 29,
   "history": [
     {
       "num": 1,
@@ -174,6 +174,13 @@
       "headline": "BTS en Lima mueve a las marcas: así son las activaciones previas a sus tres conciertos",
       "articleCount": 26,
       "file": "ediciones/027.html"
+    },
+    {
+      "num": 28,
+      "date": "2026-10-08",
+      "headline": "Estrategias phygital: cuándo la tecnología mejora la experiencia y cuándo la complica",
+      "articleCount": 32,
+      "file": "ediciones/028.html"
     }
   ]
 }
