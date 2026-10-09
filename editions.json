@@ -1,5 +1,5 @@
 {
-  "current": 29,
+  "current": 30,
   "history": [
     {
       "num": 1,
@@ -181,6 +181,13 @@
       "headline": "Estrategias phygital: cuándo la tecnología mejora la experiencia y cuándo la complica",
       "articleCount": 32,
       "file": "ediciones/028.html"
+    },
+    {
+      "num": 29,
+      "date": "2026-10-09",
+      "headline": "El auge de la inteligencia artificial cambia quién dirige el marketing",
+      "articleCount": 31,
+      "file": "ediciones/029.html"
     }
   ]
 }
