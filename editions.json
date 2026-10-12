@@ -1,5 +1,5 @@
 {
-  "current": 30,
+  "current": 31,
   "history": [
     {
       "num": 1,
@@ -188,6 +188,13 @@
       "headline": "El auge de la inteligencia artificial cambia quién dirige el marketing",
       "articleCount": 31,
       "file": "ediciones/029.html"
+    },
+    {
+      "num": 30,
+      "date": "2026-10-12",
+      "headline": "BTS en Lima: conciertos generaron más de S/5,8 millones por ventas de alimentos, bebidas y",
+      "articleCount": 31,
+      "file": "ediciones/030.html"
     }
   ]
 }
