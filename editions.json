@@ -1,5 +1,5 @@
 {
-  "current": 31,
+  "current": 32,
   "history": [
     {
       "num": 1,
@@ -195,6 +195,13 @@
       "headline": "BTS en Lima: conciertos generaron más de S/5,8 millones por ventas de alimentos, bebidas y",
       "articleCount": 31,
       "file": "ediciones/030.html"
+    },
+    {
+      "num": 31,
+      "date": "2026-10-13",
+      "headline": "Retail Media Summit llega al Perú: “Connected Commerce” reunirá a la industria el 20 de oc",
+      "articleCount": 30,
+      "file": "ediciones/031.html"
     }
   ]
 }
