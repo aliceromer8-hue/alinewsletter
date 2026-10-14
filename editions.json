@@ -1,5 +1,5 @@
 {
-  "current": 32,
+  "current": 33,
   "history": [
     {
       "num": 1,
@@ -202,6 +202,13 @@
       "headline": "Retail Media Summit llega al Perú: “Connected Commerce” reunirá a la industria el 20 de oc",
       "articleCount": 30,
       "file": "ediciones/031.html"
+    },
+    {
+      "num": 32,
+      "date": "2026-10-14",
+      "headline": "Águila Light despierta el antojo de una cerveza fría con esta creativa publicidad OOH",
+      "articleCount": 35,
+      "file": "ediciones/032.html"
     }
   ]
 }
