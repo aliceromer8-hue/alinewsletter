@@ -1,5 +1,5 @@
 {
-  "current": 33,
+  "current": 34,
   "history": [
     {
       "num": 1,
@@ -209,6 +209,13 @@
       "headline": "Águila Light despierta el antojo de una cerveza fría con esta creativa publicidad OOH",
       "articleCount": 35,
       "file": "ediciones/032.html"
+    },
+    {
+      "num": 33,
+      "date": "2026-10-15",
+      "headline": "Marketing de influencers: el 75% no recuerda colaboraciones entre marcas y creadores",
+      "articleCount": 31,
+      "file": "ediciones/033.html"
     }
   ]
 }
