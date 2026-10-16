@@ -1,5 +1,5 @@
 {
-  "current": 34,
+  "current": 35,
   "history": [
     {
       "num": 1,
@@ -216,6 +216,13 @@
       "headline": "Marketing de influencers: el 75% no recuerda colaboraciones entre marcas y creadores",
       "articleCount": 31,
       "file": "ediciones/033.html"
+    },
+    {
+      "num": 34,
+      "date": "2026-10-16",
+      "headline": "Inteligencia artificial aplicada al marketing: 67% la utiliza para crear contenido publici",
+      "articleCount": 30,
+      "file": "ediciones/034.html"
     }
   ]
 }
