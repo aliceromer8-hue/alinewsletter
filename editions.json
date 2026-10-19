@@ -1,5 +1,5 @@
 {
-  "current": 35,
+  "current": 36,
   "history": [
     {
       "num": 1,
@@ -223,6 +223,13 @@
       "headline": "Inteligencia artificial aplicada al marketing: 67% la utiliza para crear contenido publici",
       "articleCount": 30,
       "file": "ediciones/034.html"
+    },
+    {
+      "num": 35,
+      "date": "2026-10-19",
+      "headline": "Más del 55 % de peruanos utiliza tres pantallas a la vez: ¿cómo afecta a las marcas y la p",
+      "articleCount": 26,
+      "file": "ediciones/035.html"
     }
   ]
 }
