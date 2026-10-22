@@ -1,5 +1,5 @@
 {
-  "current": 38,
+  "current": 39,
   "history": [
     {
       "num": 1,
@@ -244,6 +244,13 @@
       "headline": "CCL y ESAN abordan los retos de la inteligencia artificial y la protección de marcas en la",
       "articleCount": 33,
       "file": "ediciones/037.html"
+    },
+    {
+      "num": 38,
+      "date": "2026-10-22",
+      "headline": "Inteligencia artificial en marketing digital cómo proteger marcas, datos e imágenes",
+      "articleCount": 35,
+      "file": "ediciones/038.html"
     }
   ]
 }
