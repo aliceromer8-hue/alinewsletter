@@ -1,5 +1,5 @@
 {
-  "current": 39,
+  "current": 40,
   "history": [
     {
       "num": 1,
@@ -251,6 +251,13 @@
       "headline": "Inteligencia artificial en marketing digital cómo proteger marcas, datos e imágenes",
       "articleCount": 35,
       "file": "ediciones/038.html"
+    },
+    {
+      "num": 39,
+      "date": "2026-10-23",
+      "headline": "La inteligencia artificial y la confianza redefinen la relación entre las marcas y los con",
+      "articleCount": 27,
+      "file": "ediciones/039.html"
     }
   ]
 }
