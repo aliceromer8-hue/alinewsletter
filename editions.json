@@ -1,5 +1,5 @@
 {
-  "current": 40,
+  "current": 41,
   "history": [
     {
       "num": 1,
@@ -258,6 +258,13 @@
       "headline": "La inteligencia artificial y la confianza redefinen la relación entre las marcas y los con",
       "articleCount": 27,
       "file": "ediciones/039.html"
+    },
+    {
+      "num": 40,
+      "date": "2026-10-26",
+      "headline": "El Retail Media Summit Perú reunió a líderes de la industria en su primera edición",
+      "articleCount": 30,
+      "file": "ediciones/040.html"
     }
   ]
 }
