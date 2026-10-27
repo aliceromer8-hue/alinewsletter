@@ -1,5 +1,5 @@
 {
-  "current": 41,
+  "current": 42,
   "history": [
     {
       "num": 1,
@@ -265,6 +265,13 @@
       "headline": "El Retail Media Summit Perú reunió a líderes de la industria en su primera edición",
       "articleCount": 30,
       "file": "ediciones/040.html"
+    },
+    {
+      "num": 41,
+      "date": "2026-10-27",
+      "headline": "Influencer marketing en Perú: las dificultades de las marcas para medir los resultados de ",
+      "articleCount": 31,
+      "file": "ediciones/041.html"
     }
   ]
 }
