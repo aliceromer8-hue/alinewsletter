@@ -1,5 +1,5 @@
 {
-  "current": 42,
+  "current": 43,
   "history": [
     {
       "num": 1,
@@ -272,6 +272,13 @@
       "headline": "Influencer marketing en Perú: las dificultades de las marcas para medir los resultados de ",
       "articleCount": 31,
       "file": "ediciones/041.html"
+    },
+    {
+      "num": 42,
+      "date": "2026-10-28",
+      "headline": "El Peruano organiza seminario sobre publicidad digital en influencers y apuestas en línea",
+      "articleCount": 28,
+      "file": "ediciones/042.html"
     }
   ]
 }
