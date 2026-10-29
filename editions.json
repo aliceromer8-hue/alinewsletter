@@ -1,5 +1,5 @@
 {
-  "current": 43,
+  "current": 44,
   "history": [
     {
       "num": 1,
@@ -279,6 +279,13 @@
       "headline": "El Peruano organiza seminario sobre publicidad digital en influencers y apuestas en línea",
       "articleCount": 28,
       "file": "ediciones/042.html"
+    },
+    {
+      "num": 43,
+      "date": "2026-10-29",
+      "headline": "El fin del SEO tradicional: ¿Cómo el retail peruano debe prepararse para la era de la inte",
+      "articleCount": 31,
+      "file": "ediciones/043.html"
     }
   ]
 }
