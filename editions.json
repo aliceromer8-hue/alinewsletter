@@ -1,5 +1,5 @@
 {
-  "current": 44,
+  "current": 45,
   "history": [
     {
       "num": 1,
@@ -286,6 +286,13 @@
       "headline": "El fin del SEO tradicional: ¿Cómo el retail peruano debe prepararse para la era de la inte",
       "articleCount": 31,
       "file": "ediciones/043.html"
+    },
+    {
+      "num": 44,
+      "date": "2026-10-30",
+      "headline": "Turrón peruano: así innovan las marcas el postre emblema del mes morado",
+      "articleCount": 30,
+      "file": "ediciones/044.html"
     }
   ]
 }
