@@ -1,5 +1,5 @@
 {
-  "current": 45,
+  "current": 46,
   "history": [
     {
       "num": 1,
@@ -293,6 +293,13 @@
       "headline": "Turrón peruano: así innovan las marcas el postre emblema del mes morado",
       "articleCount": 30,
       "file": "ediciones/044.html"
+    },
+    {
+      "num": 45,
+      "date": "2026-11-02",
+      "headline": "Marca Perú acompañará la promoción empresarial que impulsa la CCL en el país y el exterior",
+      "articleCount": 23,
+      "file": "ediciones/045.html"
     }
   ]
 }
