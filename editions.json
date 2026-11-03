@@ -1,5 +1,5 @@
 {
-  "current": 46,
+  "current": 47,
   "history": [
     {
       "num": 1,
@@ -300,6 +300,13 @@
       "headline": "Marca Perú acompañará la promoción empresarial que impulsa la CCL en el país y el exterior",
       "articleCount": 23,
       "file": "ediciones/045.html"
+    },
+    {
+      "num": 46,
+      "date": "2026-11-03",
+      "headline": "De auspiciar carreras a construir comunidad: la estrategia de las marcas para conectar con",
+      "articleCount": 28,
+      "file": "ediciones/046.html"
     }
   ]
 }
