@@ -1,5 +1,5 @@
 {
-  "current": 48,
+  "current": 49,
   "history": [
     {
       "num": 1,
@@ -314,6 +314,13 @@
       "headline": "Changan impacta a más de 600 mil personas diarias con el primer branding automotriz en Lín",
       "articleCount": 30,
       "file": "ediciones/047.html"
+    },
+    {
+      "num": 48,
+      "date": "2026-11-05",
+      "headline": "Ecommerce en Perú: más de 937 mil negocios ya venden por internet en 2026",
+      "articleCount": 29,
+      "file": "ediciones/048.html"
     }
   ]
 }
