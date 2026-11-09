@@ -1,5 +1,5 @@
 {
-  "current": 50,
+  "current": 51,
   "history": [
     {
       "num": 1,
@@ -328,6 +328,13 @@
       "headline": "Honesty trumps humor in branding: 93% of Gen Z consider it important for brands to tell th",
       "articleCount": 25,
       "file": "ediciones/049.html"
+    },
+    {
+      "num": 50,
+      "date": "2026-11-09",
+      "headline": "Estos son los 20 CEO con mejor desempeño digital en Perú: ¿quién lidera el ranking?",
+      "articleCount": 25,
+      "file": "ediciones/050.html"
     }
   ]
 }
