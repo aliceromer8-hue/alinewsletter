@@ -1,5 +1,5 @@
 {
-  "current": 51,
+  "current": 52,
   "history": [
     {
       "num": 1,
@@ -335,6 +335,13 @@
       "headline": "Estos son los 20 CEO con mejor desempeño digital en Perú: ¿quién lidera el ranking?",
       "articleCount": 25,
       "file": "ediciones/050.html"
+    },
+    {
+      "num": 51,
+      "date": "2026-11-10",
+      "headline": "Mientras Walmart y Bodega Aurrera impulsan Great Value y marcas propias, FEMSA apuesta por",
+      "articleCount": 30,
+      "file": "ediciones/051.html"
     }
   ]
 }
