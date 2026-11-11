@@ -1,5 +1,5 @@
 {
-  "current": 52,
+  "current": 53,
   "history": [
     {
       "num": 1,
@@ -342,6 +342,13 @@
       "headline": "Mientras Walmart y Bodega Aurrera impulsan Great Value y marcas propias, FEMSA apuesta por",
       "articleCount": 30,
       "file": "ediciones/051.html"
+    },
+    {
+      "num": 52,
+      "date": "2026-11-11",
+      "headline": "De la creatividad a los negocios: ¿qué cambió en la publicidad peruana para ganar 16 Leone",
+      "articleCount": 31,
+      "file": "ediciones/052.html"
     }
   ]
 }
