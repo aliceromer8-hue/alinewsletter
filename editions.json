@@ -1,5 +1,5 @@
 {
-  "current": 53,
+  "current": 54,
   "history": [
     {
       "num": 1,
@@ -349,6 +349,13 @@
       "headline": "De la creatividad a los negocios: ¿qué cambió en la publicidad peruana para ganar 16 Leone",
       "articleCount": 31,
       "file": "ediciones/052.html"
+    },
+    {
+      "num": 53,
+      "date": "2026-11-12",
+      "headline": "Advolution 2026: Lima reunirá a referentes de la publicidad y el marketing digital",
+      "articleCount": 29,
+      "file": "ediciones/053.html"
     }
   ]
 }
