@@ -1,5 +1,5 @@
 {
-  "current": 54,
+  "current": 55,
   "history": [
     {
       "num": 1,
@@ -356,6 +356,13 @@
       "headline": "Advolution 2026: Lima reunirá a referentes de la publicidad y el marketing digital",
       "articleCount": 29,
       "file": "ediciones/053.html"
+    },
+    {
+      "num": 54,
+      "date": "2026-11-13",
+      "headline": "Advolution 2026: Lima reunirá a referentes de la publicidad y el marketing digital",
+      "articleCount": 26,
+      "file": "ediciones/054.html"
     }
   ]
 }
