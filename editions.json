@@ -1,5 +1,5 @@
 {
-  "current": 55,
+  "current": 56,
   "history": [
     {
       "num": 1,
@@ -363,6 +363,13 @@
       "headline": "Advolution 2026: Lima reunirá a referentes de la publicidad y el marketing digital",
       "articleCount": 26,
       "file": "ediciones/054.html"
+    },
+    {
+      "num": 55,
+      "date": "2026-11-16",
+      "headline": "The North Face lleva la textura de su icónica casaca a una campaña de publicidad exterior",
+      "articleCount": 26,
+      "file": "ediciones/055.html"
     }
   ]
 }
