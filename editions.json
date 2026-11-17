@@ -1,5 +1,5 @@
 {
-  "current": 56,
+  "current": 57,
   "history": [
     {
       "num": 1,
@@ -370,6 +370,13 @@
       "headline": "The North Face lleva la textura de su icónica casaca a una campaña de publicidad exterior",
       "articleCount": 26,
       "file": "ediciones/055.html"
+    },
+    {
+      "num": 56,
+      "date": "2026-11-17",
+      "headline": "Mercado de aceites en Perú: todos compiten, pero uno domina con estrategia, ¿cuál es?",
+      "articleCount": 29,
+      "file": "ediciones/056.html"
     }
   ]
 }
