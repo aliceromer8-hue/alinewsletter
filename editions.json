@@ -1,5 +1,5 @@
 {
-  "current": 57,
+  "current": 58,
   "history": [
     {
       "num": 1,
@@ -377,6 +377,13 @@
       "headline": "Mercado de aceites en Perú: todos compiten, pero uno domina con estrategia, ¿cuál es?",
       "articleCount": 29,
       "file": "ediciones/056.html"
+    },
+    {
+      "num": 57,
+      "date": "2026-11-18",
+      "headline": "The North Face lleva la textura de su icónica casaca a una campaña de publicidad exterior",
+      "articleCount": 25,
+      "file": "ediciones/057.html"
     }
   ]
 }
