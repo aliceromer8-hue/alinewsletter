@@ -1,5 +1,5 @@
 {
-  "current": 58,
+  "current": 59,
   "history": [
     {
       "num": 1,
@@ -384,6 +384,13 @@
       "headline": "The North Face lleva la textura de su icónica casaca a una campaña de publicidad exterior",
       "articleCount": 25,
       "file": "ediciones/057.html"
+    },
+    {
+      "num": 58,
+      "date": "2026-11-19",
+      "headline": "Sed lanza Marcas Estrella: su nuevo modelo de branding basado en estrategia para construir",
+      "articleCount": 33,
+      "file": "ediciones/058.html"
     }
   ]
 }
