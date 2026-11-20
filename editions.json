@@ -1,5 +1,5 @@
 {
-  "current": 59,
+  "current": 60,
   "history": [
     {
       "num": 1,
@@ -391,6 +391,13 @@
       "headline": "Sed lanza Marcas Estrella: su nuevo modelo de branding basado en estrategia para construir",
       "articleCount": 33,
       "file": "ediciones/058.html"
+    },
+    {
+      "num": 59,
+      "date": "2026-11-20",
+      "headline": "Retail Media redefine la estrategia de medios: el consumidor nunca estuvo dividido",
+      "articleCount": 34,
+      "file": "ediciones/059.html"
     }
   ]
 }
