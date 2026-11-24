@@ -1,5 +1,5 @@
 {
-  "current": 61,
+  "current": 62,
   "history": [
     {
       "num": 1,
@@ -405,6 +405,13 @@
       "headline": "Marketing LATAM: 43% usa IA, solo 24% la ejecuta",
       "articleCount": 32,
       "file": "ediciones/060.html"
+    },
+    {
+      "num": 61,
+      "date": "2026-11-24",
+      "headline": "Meta vs TikTok: cuál cuesta menos para conseguir alcance, clics, engagement, leads y venta",
+      "articleCount": 29,
+      "file": "ediciones/061.html"
     }
   ]
 }
