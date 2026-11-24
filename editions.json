@@ -1,5 +1,5 @@
 {
-  "current": 60,
+  "current": 61,
   "history": [
     {
       "num": 1,
@@ -398,6 +398,13 @@
       "headline": "Retail Media redefine la estrategia de medios: el consumidor nunca estuvo dividido",
       "articleCount": 34,
       "file": "ediciones/059.html"
+    },
+    {
+      "num": 60,
+      "date": "2026-11-23",
+      "headline": "Marketing LATAM: 43% usa IA, solo 24% la ejecuta",
+      "articleCount": 32,
+      "file": "ediciones/060.html"
     }
   ]
 }
