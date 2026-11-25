@@ -1,5 +1,5 @@
 {
-  "current": 62,
+  "current": 63,
   "history": [
     {
       "num": 1,
@@ -412,6 +412,13 @@
       "headline": "Meta vs TikTok: cuál cuesta menos para conseguir alcance, clics, engagement, leads y venta",
       "articleCount": 29,
       "file": "ediciones/061.html"
+    },
+    {
+      "num": 62,
+      "date": "2026-11-25",
+      "headline": "Black Friday: el 46% de consumidores desconfía de los descuentos, según BCG",
+      "articleCount": 30,
+      "file": "ediciones/062.html"
     }
   ]
 }
