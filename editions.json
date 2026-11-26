@@ -1,5 +1,5 @@
 {
-  "current": 63,
+  "current": 64,
   "history": [
     {
       "num": 1,
@@ -419,6 +419,13 @@
       "headline": "Black Friday: el 46% de consumidores desconfía de los descuentos, según BCG",
       "articleCount": 30,
       "file": "ediciones/062.html"
+    },
+    {
+      "num": 63,
+      "date": "2026-11-26",
+      "headline": "Black Friday: el 46% de consumidores desconfía de los descuentos, según BCG",
+      "articleCount": 29,
+      "file": "ediciones/063.html"
     }
   ]
 }
