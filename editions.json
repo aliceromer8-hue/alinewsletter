@@ -1,5 +1,5 @@
 {
-  "current": 64,
+  "current": 65,
   "history": [
     {
       "num": 1,
@@ -426,6 +426,13 @@
       "headline": "Black Friday: el 46% de consumidores desconfía de los descuentos, según BCG",
       "articleCount": 29,
       "file": "ediciones/063.html"
+    },
+    {
+      "num": 64,
+      "date": "2026-11-27",
+      "headline": "El futuro de la publicidad en el Perú: desafíos y oportunidades para la industria",
+      "articleCount": 34,
+      "file": "ediciones/064.html"
     }
   ]
 }
